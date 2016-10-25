@@ -20,4 +20,4 @@ deployment:
   staging:
     branch: master
     commands:
-      - sls dash deploy dev
+      - npm run deploy_dev
