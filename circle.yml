@@ -1,0 +1,23 @@
+machine:
+  timezone: Asia/Tokyo
+
+  node:
+    version: 4.3
+
+  environment:
+    AWS_REGION: us-west-2
+    AWS_PROFILE: dap-lambda_test
+
+  post:
+    - bash ${CIRCLE_PROJECT_REPONAME}/scripts/circleci_env
+    - bash ${CIRCLE_PROJECT_REPONAME}/scripts/aws_init
+
+test:
+  override:
+    - gulp test
+
+deployment:
+  staging:
+    branch: master
+    commands:
+      - sls dash deploy dev
