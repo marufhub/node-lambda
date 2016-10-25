@@ -20,4 +20,4 @@ deployment:
   staging:
     branch: master
     commands:
-      - npm run deploy_dev
+      - run deploy_dev
