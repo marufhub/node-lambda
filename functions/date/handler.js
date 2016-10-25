@@ -2,6 +2,6 @@
 
 module.exports.handler = function(event, context, cb) {
   return cb(null, {
-    message: 'Go Serverless! Your Lambda function executed successfully!'
+    message: 'Welcome to Serverless! Your Lambda function executed successfully!'
   });
 };
