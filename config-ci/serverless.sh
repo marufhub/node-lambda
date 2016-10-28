@@ -1,4 +1,3 @@
-STAGE=dev
 
 OPTION="-s $STAGE -r $AWS_REGION"
 

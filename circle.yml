@@ -7,15 +7,15 @@ machine:
     AWS_PROFILE: dap-lambda_test
 
   post:
-    - bash ${CIRCLE_PROJECT_REPONAME}/scripts/circleci_env
-    - bash ${CIRCLE_PROJECT_REPONAME}/scripts/aws_init
+    - bash ${CIRCLE_PROJECT_REPONAME}/config-ci/circleci_env
+    - bash ${CIRCLE_PROJECT_REPONAME}/config-ci/aws_init
 
 test:
   override:
-    - gulp test
+    - npm run run_tests
 
 deployment:
-  staging:
+  dev:
     branch: master
     commands:
       - npm run deploy_dev
