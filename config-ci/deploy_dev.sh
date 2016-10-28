@@ -2,4 +2,4 @@ echo scripts/deploy_dev.sh
 
 STAGE=dev
 
-bash ./serverless.sh
+bash config-ci/serverless.sh
