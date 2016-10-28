@@ -12,7 +12,7 @@ machine:
 
 test:
   override:
-    - npm run run_tests
+    - npm run test
 
 deployment:
   dev:
