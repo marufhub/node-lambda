@@ -1,3 +1,3 @@
-echo scripts/deploy_staging.sh
+echo scripts/deploy_dev.sh
 
-bash scripts/serverless.sh
+bash ./serverless.sh

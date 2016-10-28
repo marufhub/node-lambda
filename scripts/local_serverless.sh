@@ -1,5 +1,5 @@
 
-export AWS_REGION=ap-northeast-1
-export AWS_PROFILE=serverless-circleci_dev
+export AWS_REGION: us-west-2
+export AWS_PROFILE: dap-lambda_test
 
 bash ./serverless.sh
