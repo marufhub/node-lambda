@@ -1,0 +1,125 @@
+---
+swagger: "2.0"
+info:
+  description: "This is a general API for Output datasets of DAP(Data Analytics Platform).\
+    \ This is build on AWS API Gateway and Lambda(NodeJS). API Gateway handle the\
+    \ HTTP request, response and invoke Lambda function for processing. Lambda function\
+    \ interact with SSO and database to perform the operation."
+  version: "1.0.0"
+  title: "DAP_Lambda"
+host: "virtserver.swaggerhub.com"
+basePath: "/marufhub/test/1.0.0"
+tags: []
+schemes:
+- "https"
+- "http"
+paths:
+  /api/v2/dashboard/datasets/csv:
+    get:
+      tags:
+      - "My Swagger Tag"
+      summary: "CSV download"
+      description: "summary result as csv"
+      operationId: "get-api-v2-dashboard-datasets-csv"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "node_id"
+        in: "query"
+        description: "node_id"
+        required: true
+        type: "string"
+      - name: "dataType"
+        in: "query"
+        description: "data type"
+        required: true
+        type: "string"
+      - name: "where"
+        in: "query"
+        description: "time period"
+        required: true
+        type: "string"
+      - name: "filename"
+        in: "query"
+        description: "output filename"
+        required: true
+        type: "string"
+      - name: "group"
+        in: "query"
+        description: "granularity"
+        required: true
+        type: "string"
+      - name: "timezone"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "response"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+          examples:
+            application/json:
+              url: "www.example.com"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      security: []
+      x-swagger-router-controller: "MySwaggerTag"
+  /api/v2/dashboard/datasets/summary:
+    get:
+      tags:
+      - "My Swagger Tag"
+      summary: "CSV download"
+      description: "summary result as csv"
+      operationId: "get-api-v2-dashboard-datasets-summary"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "node_id"
+        in: "query"
+        description: "node_id"
+        required: true
+        type: "string"
+      - name: "where"
+        in: "query"
+        description: "time period"
+        required: true
+        type: "string"
+      - name: "timezone"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "response"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+          examples:
+            application/json:
+              a0000000029.a0000000030.a0000000031:
+                visitors_male_ratio:
+                - sum: 1.1999999999999999555910790149937383830547332763671875
+                - svg: 1.1999999999999999555910790149937383830547332763671875
+                - max: 1.1999999999999999555910790149937383830547332763671875
+                - min: 1.1999999999999999555910790149937383830547332763671875
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      security: []
+      x-swagger-router-controller: "MySwaggerTag"
+securityDefinitions:
+  apiKeyHeader:
+    type: "apiKey"
+    name: "X-API-Key"
+    in: "header"
+  authorizationHeader:
+    type: "apiKey"
+    name: "Authorization"
+    in: "header"
+definitions:
+  inline_response_200:
+    properties:
+      url:
+        type: "string"
+        title: "Download URL"
