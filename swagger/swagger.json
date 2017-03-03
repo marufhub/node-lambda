@@ -153,4 +153,150 @@
       }
     }
   }
+}{
+  "swagger": "2.0",
+  "info": {
+    "version": "2.3",
+    "title": "DAP_Lambda",
+    "description": "This is a general API for Output datasets of DAP(Data Analytics Platform). This is build on AWS API Gateway and Lambda(NodeJS). API Gateway handle the HTTP request, response and invoke Lambda function for processing. Lambda function interact with SSO and database to perform the operation."
+  },
+  "host": "localhost",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "tags": [],
+  "securityDefinitions": {},
+  "paths": {
+    "/api/v2/output/nodes/{node_id}": {
+      "get": {
+        "tags": [
+          "My Swagger Tag"
+        ],
+        "summary": "Swagger summary",
+        "description": "Swagger description",
+        "operationId": "get-api-v2-output-nodes-node_id",
+        "produces": [
+          "application/json"
+        ],
+        "security": [],
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      },
+      "put": {
+        "tags": [],
+        "summary": "",
+        "description": "",
+        "operationId": "put-api-v2-output-nodes-node_id",
+        "produces": [
+          "application/json"
+        ],
+        "security": [],
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/date": {
+      "get": {
+        "tags": [
+          "My Swagger Tag"
+        ],
+        "summary": "CSV download",
+        "description": "summary result as csv",
+        "operationId": "get-date",
+        "produces": [
+          "application/json"
+        ],
+        "security": [],
+        "parameters": [
+          {
+            "name": "node_id",
+            "description": "node_id",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "dataType",
+            "description": "data type",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "where",
+            "description": "time period",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "filename",
+            "description": "output filename",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "group",
+            "description": "granularity",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "timezone",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            },
+            "schema": {
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "title": "Download URL"
+                }
+              }
+            },
+            "examples": {
+              "application/json": {
+                "url": "www.example.com"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stringprocess": {
+      "get": {
+        "tags": [],
+        "summary": "",
+        "description": "",
+        "operationId": "get-stringprocess",
+        "produces": [
+          "application/json"
+        ],
+        "security": [],
+        "parameters": [],
+        "responses": {}
+      }
+    }
+  },
+  "definitions": {}
 }
