@@ -1,7 +1,7 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "description" : "Maruf This is a general API for Output datasets of DAP(Data Analytics Platform). This is build on AWS API Gateway and Lambda(NodeJS). API Gateway handle the HTTP request, response and invoke Lambda function for processing. Lambda function interact with SSO and database to perform the operation.",
+    "description" : "This is a general API for Output datasets of DAP(Data Analytics Platform). This is build on AWS API Gateway and Lambda(NodeJS). API Gateway handle the HTTP request, response and invoke Lambda function for processing. Lambda function interact with SSO and database to perform the operation.",
     "version" : "1.0.0",
     "title" : "DAP_Lambda"
   },
